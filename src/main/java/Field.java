@@ -7,7 +7,7 @@ public class Field {
     String actualvalue;
 
 
-    public Field (String coordinate, String value){
+    public Field(String coordinate, String value) {
         this.coordinate = coordinate;
         this.value = value;
         this.actualvalue = "X";
@@ -38,7 +38,7 @@ public class Field {
         this.actualvalue = actualvalue;
     }
 
-    public static List<Field> createFields (List<String> wordsInGame) {
+    public static List<Field> createFields(List<String> wordsInGame) {
         int half = wordsInGame.size() / 2;
         int coordNumber = 1;
         List<Field> fields = new ArrayList<>();
