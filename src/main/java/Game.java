@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Game {
 
@@ -16,13 +17,16 @@ public class Game {
 
         int amountOfWords = 0;
         int chances = 0;
+        int beginChances = 0;
 
         if (difficultyLevel.equals("easy")) {
             amountOfWords = 4;
             chances = 10;
+            beginChances = 10;
         } else if (difficultyLevel.equals("hard")) {
             amountOfWords = 8;
             chances = 15;
+            beginChances = 15;
         } else {
             System.out.println("You wrote wrong option");
         }
@@ -36,10 +40,6 @@ public class Game {
 
         wordsInGame.addAll(wordsInGame);
         Collections.shuffle(wordsInGame);
-
-        for (String s : wordsInGame) {
-            System.out.println(s);
-        }
 
         List<Field> fields = Field.createFields(wordsInGame);
 
@@ -140,16 +140,6 @@ public class Game {
         if (chances == 0) {
             System.out.println("You losed the game. No more chances");
             return;
-        }
-
-        int y = 0;
-        for (int x = 0; x < fields.size(); x++) {
-            if (fields.get(x).getActualvalue() != "X") {
-                y++;
-            }
-        }
-        if (y == fields.size()) {
-            System.out.println("You won the game. Congratulations!");
         }
 
     }
