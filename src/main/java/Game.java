@@ -143,6 +143,15 @@ public class Game {
                 return;
             }
 
+            int y = 0;
+            for (int x = 0; x<fields.size(); x++){
+                if (fields.get(x).getActualvalue()!="X"){
+                    y++;
+                }
+            }
+            if (y == fields.size()){
+                System.out.println("You won the game. Congratulations!");
+            }
 
     }
 }
